@@ -7,12 +7,17 @@ class User {
 
 
 class Classic {
-  constructor(frame, art) {
+  constructor(art_url) {
   this.frame = "black-border"
-  this.art = "art-url"
+  // thing_to_set = condition
+  this.art_url = "art-url"
 
   render(user) {
-
+      let el = document.createElement('div')
+      el.style.width = '100px'
+      el.style.height = '100px'
+      el.style.backgroundcolor = 'black'
+      document.body.appendChild(el)
     }
   }
 }
