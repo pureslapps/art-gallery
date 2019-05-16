@@ -1,25 +1,40 @@
-class User {
-  constructor(email, pasword) {
-  this.email = email
-  this.password = password
-  }
-}
-
 
 class Classic {
-  constructor(art_url) {
-  this.frame = "black-border"
+  constructor(picture) {
+  this.frame = 'black-border'
   // thing_to_set = condition
-  this.art_url = "art-url"
+  this.art_url = picture
+}
 
-  render(user) {
-      let el = document.createElement('div')
-      el.style.width = '100px'
-      el.style.height = '100px'
-      el.style.backgroundcolor = 'black'
+  render() {
+      let el = document.createElement('img')
+      el.style.width = '500px'
+      el.style.height = '500px'
+      el.src = this.art_url
+      el.style.border = 'thin solid black'
       document.body.appendChild(el)
-    }
   }
 }
 
-user1 = new User ("dave@show.com", "comedy")
+let art1 = new Classic('https://scstylecaster.files.wordpress.com/2013/11/botticelli-1.jpg?w=537&h=344')
+
+art1.render()
+
+class Meme extends Classic {
+  constructor(args, photo) {
+  super(args)
+  this.frame1 = 'red-border'
+  this.meme_url = photo
+}
+
+  render() {
+    super.render()
+    let el = document.createElement('img')
+    el.src = this.meme_url
+    el.style.border = 'thin solid red'
+  }
+}
+
+let meme1 = new Meme('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Zoe_Saldana_by_Gage_Skidmore_2.jpg/220px-Zoe_Saldana_by_Gage_Skidmore_2.jpg')
+
+meme1.render()
